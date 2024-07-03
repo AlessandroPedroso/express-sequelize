@@ -1,3 +1,4 @@
  Instalação do sequelize e configuração no projeto:
  1 - npm install sequelize@6.32.1 sequelize-cli@6.6.1 sqlite3@5.1.6 --save-exact
  2 - npx sequelize-cli init
+ 3 - npx sequelize-cli model:generate --name Pessoa --attributes nome:string,email:string,cpf:string,ativo:boolean,role:string #cria automaticamente a model com os campos e tipos de dados
