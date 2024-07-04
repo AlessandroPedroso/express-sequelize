@@ -2,3 +2,28 @@
  1 - npm install sequelize@6.32.1 sequelize-cli@6.6.1 sqlite3@5.1.6 --save-exact
  2 - npx sequelize-cli init
  3 - npx sequelize-cli model:generate --name Pessoa --attributes nome:string,email:string,cpf:string,ativo:boolean,role:string #cria automaticamente a model com os campos e tipos de dados
+ 4 - npx sequelize-cli seed:generate --name demo-pessoa #cria as demostrações chamada de seeders
+ 5 - npx sequelize-cli db:seed:all #depois de configurar o seed executar o comando
+
+
+Documentação sobre comandos do Sequelize:
+
+sequelize db:migrate	#Executa todas as migrações pendentes para atualizar o banco de dados
+sequelize db:migrate:schema:timestamps:add	#Atualiza uma tabela de migração para ter marcação de data/hora
+sequelize db:migrate:status	#Exibe o status de todas as migrações
+sequelize db:migrate:undo	#Reverte a migração mais recente do banco de dados
+sequelize db:migrate:undo:all	#Reverte todas as migrações executadas
+sequelize db:seed	#Executa um seeder específico
+sequelize db:seed:undo	#Deleta os últimos dados inseridos via seeds do banco de dados
+sequelize db:seed:all	#Executa todos os seeders
+sequelize db:seed:undo:all	#Deleta todos os dados inseridos via seeds do banco de dados
+sequelize db:create	#Cria um banco com uma configuração específica
+sequelize db:drop	#Exclui o banco de dados especificado na configuração
+sequelize init	#Inicia um projeto
+sequelize init:config	#Inicia as configurações
+sequelize init:migrations	#Inicia as migrações
+sequelize init:models	#Inicia os modelos
+sequelize init:seeders	#Inicia os seeders
+sequelize migration:generate	#Gera um novo arquivo de migração
+sequelize model:generate	#Gera uma model e sua migração [alias: model:create]
+sequelize seed:generate	#Gera um novo arquivo de seed
