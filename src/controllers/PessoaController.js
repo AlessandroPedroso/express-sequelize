@@ -1,12 +1,10 @@
-const database = require('../models');
+const Controller = require('./Controller.js');
+const PessoaServices = require('../services/PessoaServices.js');
 
-// biome-ignore lint/complexity/noStaticOnlyClass: <explanation>
-class PessoaController {
-	static async pegaTodas(_req, _res) {
-		try {
-			const listaDePessoas = await database.Pessoa.findAll();
-			return _res.status(200).json(listaDePessoas);
-		} catch (erro) {}
+const pessoaServices = new PessoaServices();
+class PessoaController extends Controller {
+	constructor() {
+		super(pessoaServices);
 	}
 }
 
