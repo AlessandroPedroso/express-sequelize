@@ -2,7 +2,15 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
 	// biome-ignore lint/complexity/noStaticOnlyClass: <explanation>
 	class Pessoa extends Model {
-		static associate(models) {}
+		static associate(models) {
+			Pessoa.hasMany(models.Curso, {
+				foreignKey: 'docente_id',
+			});
+
+			Pessoa.hasMany(models.Matricula, {
+				foreignKey: 'estudante_id',
+			});
+		}
 	}
 	Pessoa.init(
 		{
