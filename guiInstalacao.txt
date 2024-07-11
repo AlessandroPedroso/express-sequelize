@@ -4,6 +4,7 @@
  3 - npx sequelize-cli model:generate --name Pessoa --attributes nome:string,email:string,cpf:string,ativo:boolean,role:string #cria automaticamente a model com os campos e tipos de dados
  4 - npx sequelize-cli seed:generate --name demo-pessoa #cria as demostrações chamada de seeders
  5 - npx sequelize-cli db:seed:all #depois de configurar o seed executar o comando
+ 6 - npx sequelize-cli db:seed --seed 20240710134829-demo-cursos.js # executar por aquivo
 
 
 Documentação sobre comandos do Sequelize:
