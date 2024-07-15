@@ -1,6 +1,5 @@
 //CAMADA INTERMEDIÁRIA
-const { where } = require('sequelize');
-const dataSource = require('../models');
+const dataSource = require('../database/models');
 
 class Services {
 	constructor(nomeDoModel) {
