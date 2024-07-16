@@ -9,7 +9,8 @@ module.exports = (sequelize, DataTypes) => {
 
 			Pessoa.hasMany(models.Matricula, {
 				foreignKey: 'estudante_id',
-				scope: { status: 'matriculado' },
+				//escopo de associação
+				// scope: { status: 'matriculado' },
 				as: 'aulasMatriculadas',
 			});
 		}
@@ -27,6 +28,17 @@ module.exports = (sequelize, DataTypes) => {
 			modelName: 'Pessoa',
 			tableName: 'pessoas',
 			paranoid: true,
+			//escopo somente para models
+			defaultScope: {
+				where: {
+					ativo: true,
+				},
+			},
+			scopes: {
+				todosOsRegistros: {
+					where: {},
+				},
+			},
 		},
 	);
 	return Pessoa;
