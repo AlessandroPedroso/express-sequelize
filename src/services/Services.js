@@ -1,9 +1,6 @@
 //CAMADA INTERMEDIÁRIA
-<<<<<<< HEAD
-const dataSource = require('../models');
-=======
 const dataSource = require('../database/models');
->>>>>>> 062d51beb5b9ce0548c2f5c9a0f8cbdc1f77475d
+
 
 class Services {
 	constructor(nomeDoModel) {
