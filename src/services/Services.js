@@ -1,5 +1,9 @@
 //CAMADA INTERMEDIÁRIA
+<<<<<<< HEAD
 const dataSource = require('../models');
+=======
+const dataSource = require('../database/models');
+>>>>>>> 062d51beb5b9ce0548c2f5c9a0f8cbdc1f77475d
 
 class Services {
 	constructor(nomeDoModel) {
@@ -8,6 +12,10 @@ class Services {
 
 	async pegaTodosOsRegistros() {
 		return dataSource[this.model].findAll();
+	}
+
+	async pegaRegistrosPorEscopo(escopo) {
+		return dataSource[this.model].scope(escopo).findAll();
 	}
 
 	async pegaUmRegistroPorId(id) {
